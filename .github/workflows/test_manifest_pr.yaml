@@ -25,5 +25,5 @@ jobs:
           python3 _manifest/manifest_generator.py
           python3 _manifest/manifest_compare.py
         env:
-          MANIFEST_PATH: '_manifest/test_manifest.json'
+          MANIFEST_PATH: '_manifest/test-manifest.json'
 
