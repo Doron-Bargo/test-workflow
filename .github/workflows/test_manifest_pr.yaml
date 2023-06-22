@@ -17,14 +17,6 @@ jobs:
     env:
       MANIFEST_PATH: '_manifest/test-manifest.json'
     steps:
-      - name: Check commit message
-        run: |
-          if [[ "$(git log -1 --pretty=%B)" == *"AUTO GENERATE MANIFEST"* ]]; then
-            echo "Pull request has an excluded commit message. Skipping workflow."
-            exit 0
-          else
-            echo "Pull request does not have an excluded commit message. Continuing workflow."
-          fi
       - name: Checkout
         uses: actions/checkout@v3
       - uses: actions/setup-python@v4
