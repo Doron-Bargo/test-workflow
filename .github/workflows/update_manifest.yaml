@@ -24,4 +24,4 @@ jobs:
         with:
           add: './data/manifest.json'
           default_author: github_actions
-          push: '${new_branch input} --set-upstream --force'
+          push: 'origin --set-upstream --force'

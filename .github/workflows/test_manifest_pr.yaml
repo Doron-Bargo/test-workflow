@@ -1,4 +1,4 @@
-name: update manifest
+name: Compare manifest
 on:
   pull_request:
     types:
@@ -14,16 +14,17 @@ jobs:
     if: github.event.pull_request.base.ref == 'master'
     name: compare manifest content
     runs-on: ubuntu-latest
+    env:
+      MANIFEST_PATH: '_manifest/test-manifest.json'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - run: |
-          pip install -r ./_manifest/compare-requirements.txt
-          python3 _manifest/manifest_generator.py
-          python3 _manifest/manifest_compare.py
-        env:
-          MANIFEST_PATH: '_manifest/test-manifest.json'
-
+      - name: Install requirements
+        run: pip install -r ./_manifest/compare-requirements.txt
+      - name: Generate test manifest
+        run: python3 _manifest/manifest_generator.py
+      - name: Compare manifests
+        run: python3 _manifest/manifest_compare.py
