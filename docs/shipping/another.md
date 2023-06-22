@@ -2,7 +2,7 @@
 id: another
 title: i am something new
 sidebar_position: 2
-overview: hello hello
+overview: hello hello goodbye
 product: ['logs', 'metrics']
 os: ['windows', 'linux']
 filters: ['aws', 'cloud']
