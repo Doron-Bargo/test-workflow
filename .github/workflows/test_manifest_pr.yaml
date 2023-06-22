@@ -1,0 +1,28 @@
+name: update manifest
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - master
+    paths:
+      - 'docs/shipping/**'
+
+jobs:
+  compare_manifests:
+    if: github.event.pull_request.base.ref == master
+    name: compare manifest content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: |
+          pip install -r ./_manifest/compare-requirements.txt
+          python3 _manifest/manifest_generator.py
+        env:
+          MANIFEST_PATH: '_manifest/test_manifest.json'
+
