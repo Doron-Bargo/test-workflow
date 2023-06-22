@@ -11,7 +11,7 @@ on:
 
 jobs:
   compare_manifests:
-    if: github.event.pull_request.base.ref == master
+    if: ${{ github.event.pull_request.base.ref == master }}
     name: compare manifest content
     runs-on: ubuntu-latest
     steps:
