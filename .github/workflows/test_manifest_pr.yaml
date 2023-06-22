@@ -23,6 +23,7 @@ jobs:
       - run: |
           pip install -r ./_manifest/compare-requirements.txt
           python3 _manifest/manifest_generator.py
+          python3 _manifest/manifest_compare.py
         env:
           MANIFEST_PATH: '_manifest/test_manifest.json'
 
