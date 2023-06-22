@@ -8,7 +8,7 @@ os: ['windows', 'linux']
 filters: ['aws', 'cloud']
 logo: https://docs.logz.io/images/logo/logz-symbol.svg
 logs_dashboards: ['dfsdfgsdgfds', 'sdfgsdfg', 'hrtgwgs']
-logs_alerts: ['sdfgs', 'xcvdb']
+logs_alerts: ['sdfgs', 'xcvdb', 'jwsdw']
 logs2metrics: ['ersefg']
 metrics_dashboards: ['sdfgfsdg', 'sdfgsdyuiuyifg']
 metrics_alerts: ['azxsvb']
