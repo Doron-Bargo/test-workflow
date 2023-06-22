@@ -24,4 +24,4 @@ jobs:
         with:
           add: './data/manifest.json'
           default_author: github_actions
-          push: '--force origin HEAD:master'
+          message: 'AUTO GENERATE MANIFEST'
