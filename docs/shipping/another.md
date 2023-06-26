@@ -2,7 +2,7 @@
 id: another
 title: i am something new
 sidebar_position: 2
-overview: this is new to me
+overview: a new description very exciting
 product: ['logs', 'metrics']
 os: ['windows', 'linux']
 filters: ['aws', 'cloud']
